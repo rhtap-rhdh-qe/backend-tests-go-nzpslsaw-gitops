@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: backend-tests-go-nzpslsaw
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-tssc/task-runner:1.8
-        name: container-image  
+        - image: quay.io/rhtap_qe/backend-tests-go-nzpslsaw:ae10c3d9655c375943f776b54f6e50a15b9391ac@sha256:ac3d13dd98404a8db4c5d693367af57bcea48c6a0086398284e03498884488f3
+          name: container-image
